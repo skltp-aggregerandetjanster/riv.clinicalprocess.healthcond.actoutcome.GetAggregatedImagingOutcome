@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcome.v1.rivtabp21.GetImagingOutcomeResponderInterface;
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.GetImagingOutcomeResponseType;
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.GetImagingOutcomeType;
+import riv.clinicalprocess.healthcond.actoutcome.v3.PersonIdType;
 import se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome.getaggregatedimagingoutcome.GetAggregatedImagingOutcomeMuleServer;
 import se.skltp.agp.test.consumer.AbstractTestConsumer;
 import se.skltp.agp.test.consumer.SoapHeaderCxfInterceptor;
@@ -28,17 +29,6 @@ public class GetAggregatedImagingOutcomeTestConsumer extends AbstractTestConsume
 		Holder<ProcessingStatusType> processingStatusHolder = new Holder<ProcessingStatusType>();
 
 		consumer.callService("logical-adress", personnummer, processingStatusHolder, responseHolder);
-
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
-
-		log.info("Returned #timeslots = " + responseHolder.value.getRequestActivity().size());
-
-		*/
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
-
 	}
 
 	public GetAggregatedImagingOutcomeTestConsumer(String serviceAddress, String senderId, String originalConsumerHsaId) {
@@ -52,17 +42,11 @@ public class GetAggregatedImagingOutcomeTestConsumer extends AbstractTestConsume
 		log.debug("Calling GetImagingOutcome-soap-service with Registered Resident Id = {}", registeredResidentId);
 		
 		GetImagingOutcomeType request = new GetImagingOutcomeType();
-
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
-
-		request.setSubjectOfCareId(registeredResidentId);
-
-        */
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
-
+		final PersonIdType personId = new PersonIdType();
+		personId.setType("1.2.752.129.2.1.3.1");
+		personId.setId(registeredResidentId);
+		request.setPatientId(personId);
+	
 		GetImagingOutcomeResponseType response = _service.getImagingOutcome(logicalAddress, request);
 		responseHolder.value = response;
 		

@@ -1,6 +1,5 @@
 package se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome.getaggregatedimagingoutcome.integrationtest;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
 import static se.skltp.agp.riv.interoperability.headers.v1.CausingAgentEnum.VIRTUALIZATION_PLATFORM;
 import static se.skltp.agp.test.consumer.AbstractTestConsumer.SAMPLE_ORIGINAL_CONSUMER_HSAID;
@@ -28,7 +27,7 @@ import org.slf4j.LoggerFactory;
 import org.soitoolkit.commons.mule.util.RecursiveResourceBundle;
 
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.GetImagingOutcomeResponseType;
-
+import riv.clinicalprocess.healthcond.actoutcome.v3.ImagingOutcomeType;
 import se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome.getaggregatedimagingoutcome.GetAggregatedImagingOutcomeMuleServer;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusRecordType;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusType;
@@ -172,22 +171,13 @@ public class GetAggregatedImagingOutcomeIntegrationTest extends AbstractAggregat
     	int expextedResponseSize = testData.length;
 
 
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
-
-		assertEquals(expextedResponseSize, response.getRequestActivity().size());
+    	assertEquals(expextedResponseSize, response.getImagingOutcome().size());
 		
 		for (int i = 0; i < testData.length; i++) {
-			RequestActivityType responseElement = response.getRequestActivity().get(i);
-			assertEquals(registeredResidentId, responseElement.getSubjectOfCareId());		
-
-			assertEquals(testData[i].getExpectedBusinessObjectId(), responseElement.getSenderRequestId());
-			assertEquals(testData[i].getExpectedLogicalAddress(), responseElement.getCareUnit());		
+			ImagingOutcomeType responseElement = response.getImagingOutcome().get(i);
+			assertEquals(registeredResidentId, responseElement.getImagingOutcomeHeader().getPatientId().getId());
 		}
 
-        */
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
 
 
     	// Verify the size of the processing status and return it for further analysis
