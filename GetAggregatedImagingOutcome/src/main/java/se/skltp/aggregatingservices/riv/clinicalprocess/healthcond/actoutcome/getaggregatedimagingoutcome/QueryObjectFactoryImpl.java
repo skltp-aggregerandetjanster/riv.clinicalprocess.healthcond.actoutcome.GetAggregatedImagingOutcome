@@ -31,28 +31,26 @@ public class QueryObjectFactoryImpl implements QueryObjectFactory {
 	 * 
 	 * 1. subjectOfCareId --> registeredResidentIdentification
 	 * 2. "riv:clinicalprocess:healthcond:actoutcome" --> serviceDomain
+	 * 3. "und-bdi-ure" --> categorization
+	 * 4. SourceSystemHSAId --> LogicalAddress
+	 * 5. SourceSystemHSAId --> SourceSystem
 	 */
 	public QueryObject createQueryObject(Node node) {
+		final GetImagingOutcomeType request = (GetImagingOutcomeType)ju.unmarshal(node);
 		
-		GetImagingOutcomeType request = (GetImagingOutcomeType)ju.unmarshal(node);
+		if(log.isDebugEnabled() && request.getPatientId() != null) {
+			log.debug("Transformed payload for pid: {}", request.getPatientId().getId());
+		}
 		
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
-
-		if (log.isDebugEnabled()) log.debug("Transformed payload for pid: {}", request.getSubjectOfCareId());
-
-		FindContentType fc = new FindContentType();		
-		fc.setRegisteredResidentIdentification(request.getSubjectOfCareId());
+		final FindContentType fc = new FindContentType();
+		if(request.getPatientId() != null) {
+			fc.setRegisteredResidentIdentification(request.getPatientId().getId());
+		}
 		fc.setServiceDomain(eiServiceDomain);
+		fc.setCategorization(eiCategorization);
+		fc.setLogicalAddress(request.getSourceSystemHSAId());
+		fc.setSourceSystem(request.getSourceSystemHSAId());
 		
-		QueryObject qo = new QueryObject(fc, request);
-		return qo;
-
-        */
-		return null;
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
-
+		return new QueryObject(fc, request);
 	}
 }
