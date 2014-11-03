@@ -20,26 +20,17 @@ public class ResponseListFactoryImpl implements ResponseListFactory {
 	
 	@Override
 	public String getXmlFromAggregatedResponse(QueryObject queryObject, List<Object> aggregatedResponseList) {
-		GetImagingOutcomeResponseType aggregatedResponse = new GetImagingOutcomeResponseType();
-
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
+		final GetImagingOutcomeResponseType aggregatedResponse = new GetImagingOutcomeResponseType();
 
 	    for (Object object : aggregatedResponseList) {
-	    	GetImagingOutcomeResponseType response = (GetImagingOutcomeResponseType)object;
-			aggregatedResponse.getRequestActivity().addAll(response.getRequestActivity());
+	    	final GetImagingOutcomeResponseType response = (GetImagingOutcomeResponseType)object;
+	    	aggregatedResponse.getImagingOutcome().addAll(response.getImagingOutcome());
 		}
 
 	    if (log.isInfoEnabled()) {
     		String subjectOfCareId = queryObject.getFindContent().getRegisteredResidentIdentification();
-        	log.info("Returning {} aggregated remisstatus for subject of care id {}", aggregatedResponse.getRequestActivity().size() ,subjectOfCareId);
+        	log.info("Returning {} aggregated remisstatus for subject of care id {}", aggregatedResponse.getImagingOutcome().size() ,subjectOfCareId);
         }
-
-        */
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
-
 
         // Since the class GetImagingOutcomeResponseType don't have an @XmlRootElement annotation
         // we need to use the ObjectFactory to add it.
