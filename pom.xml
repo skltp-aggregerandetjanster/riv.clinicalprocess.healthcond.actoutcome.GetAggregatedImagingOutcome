@@ -13,12 +13,12 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <parent>
         <groupId>org.soitoolkit.commons.poms</groupId>
         <artifactId>soitoolkit-default-parent</artifactId>
-        <version>0.6.2</version>
+        <version>0.6.1</version>
     </parent>
 
     <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
     <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
-    <version>1.0.0-RC2-SNAPSHOT</version>
+    <version>1.0.0-RC3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GetAggregatedImagingOutcome-parent</name>
 
