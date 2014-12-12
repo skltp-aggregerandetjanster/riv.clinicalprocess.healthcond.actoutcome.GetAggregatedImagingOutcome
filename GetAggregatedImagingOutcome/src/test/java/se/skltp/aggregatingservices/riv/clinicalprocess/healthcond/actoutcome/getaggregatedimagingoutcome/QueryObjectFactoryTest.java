@@ -31,7 +31,6 @@ public class QueryObjectFactoryTest {
 	private static final String CATEGORIZATION = UUID.randomUUID().toString();
 	private static final String SERVICE_DOMAIN = UUID.randomUUID().toString();
 	private static final String SUBJECTOFCARE = UUID.randomUUID().toString();
-	private static final String SOURCESYSTEMHSAID = UUID.randomUUID().toString();
 	
 	
 	@BeforeClass
@@ -55,8 +54,6 @@ public class QueryObjectFactoryTest {
 		assertEquals(CATEGORIZATION, findContent.getCategorization());
 		assertEquals(SERVICE_DOMAIN, findContent.getServiceDomain());
 		assertEquals(SUBJECTOFCARE, findContent.getRegisteredResidentIdentification());
-		assertEquals(SOURCESYSTEMHSAID, findContent.getLogicalAddress());
-		assertEquals(SOURCESYSTEMHSAID, findContent.getSourceSystem());
 		assertNull(findContent.getBusinessObjectInstanceIdentifier());
 		assertNull(findContent.getClinicalProcessInterestId());
 		assertNull(findContent.getDataController());
