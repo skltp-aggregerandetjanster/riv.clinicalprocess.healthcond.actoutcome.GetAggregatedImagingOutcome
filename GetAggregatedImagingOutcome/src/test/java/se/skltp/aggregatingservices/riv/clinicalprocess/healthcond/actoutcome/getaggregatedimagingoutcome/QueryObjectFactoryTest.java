@@ -46,7 +46,7 @@ public class QueryObjectFactoryTest {
 		final PersonIdType person = new PersonIdType();
 		person.setId(SUBJECTOFCARE);
 		type.setPatientId(person);
-		type.setSourceSystemHSAId(SOURCESYSTEMHSAID);
+		type.setSourceSystemHSAId("sourceSystemHSAId");
 		
 		final Node node = createNode(type);
 		final FindContentType findContent = testObject.createQueryObject(node).getFindContent();
