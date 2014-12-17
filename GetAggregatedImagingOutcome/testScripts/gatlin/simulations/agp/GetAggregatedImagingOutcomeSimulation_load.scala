@@ -16,10 +16,8 @@ class GetAggregatedImagingOutcomeSimulation_load extends Simulation {
   val maxWaitMs      = 5000 milliseconds
 
   // System under test
-  val _baseURL        = "http://33.33.33.33:8088"
-  val _contextPath    = "/GetAggregatedImagingOutcome/service/v1"
-
-
+   val _baseURL        = "https://qa.esb.ntjp.se:443"
+   val _contextPath    = "/vp/clinicalprocess/healthcond/actoutcome/GetImagingOutcome/1/rivtabp21"
 
   val httpConf = httpConfig
     .baseURL(_baseURL)
@@ -36,7 +34,7 @@ class GetAggregatedImagingOutcomeSimulation_load extends Simulation {
 
   val scn = scenario("GetAggregatedImagingOutcome")
     .during(testTimeSecs) {
-      feed(csv("patients.csv").random)
+      feed(csv("imaging_patients.csv").random)
       .exec(
         http("GetAggregatedImagingOutcome ${patientid} - ${name}")
           .post(_contextPath)

@@ -7,7 +7,7 @@ import com.excilys.ebi.gatling.http.Headers.Names._
 import akka.util.duration._
 import bootstrap._
 
-class GetAggregatedImagingOutcomeSimulation_load extends Simulation {
+class GetAggregatedImagingOutcomeSimulation_robustness extends Simulation {
 
   val testTimeSecs   = 43200
   val noOfUsers      = 5
@@ -17,9 +17,8 @@ class GetAggregatedImagingOutcomeSimulation_load extends Simulation {
 
 
   // System under test
-  val _baseURL        = "http://33.33.33.33:8088"
-  val _contextPath    = "/GetAggregatedImagingOutcome/service/v1"
-
+   val _baseURL        = "https://qa.esb.ntjp.se:443"
+   val _contextPath    = "/vp/clinicalprocess/healthcond/actoutcome/GetImagingOutcome/1/rivtabp21"
 
 
   val httpConf = httpConfig
@@ -37,7 +36,7 @@ class GetAggregatedImagingOutcomeSimulation_load extends Simulation {
 
   val scn = scenario("GetAggregatedImagingOutcome")
     .during(testTimeSecs) {
-      feed(csv("patients.csv").random)
+      feed(csv("imaging_patients.csv").random)
       .exec(
         http("GetAggregatedImagingOutcome ${patientid} - ${name}")
           .post(_contextPath)
