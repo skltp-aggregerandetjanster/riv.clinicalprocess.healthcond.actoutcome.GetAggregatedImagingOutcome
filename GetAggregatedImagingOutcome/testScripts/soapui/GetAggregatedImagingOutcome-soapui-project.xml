@@ -1228,10 +1228,10 @@
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#agg-env}</con:endpoint><con:endpoint>http://tempuri.org</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome" name="GetImagingOutcome" bindingOperationName="GetImagingOutcome" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="121212121212 - Tolvan Tolvansson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#agg-env}</con:endpoint><con:endpoint>http://serp.local:8088/mockGetImagingOutcomeResponderBinding</con:endpoint><con:endpoint>http://tempuri.org</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome" name="GetImagingOutcome" bindingOperationName="GetImagingOutcome" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="121212121212 - Tolvan Tolvansson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="x-vp-sender-id" value="test"/>
-&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/GetAggregatedImagingOutcome/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn2="urn:riv:clinicalprocess:healthcond:actoutcome:3">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn2="urn:riv:clinicalprocess:healthcond:actoutcome:3">
    <soapenv:Header>
       <urn:LogicalAddress>55888</urn:LogicalAddress>
    </soapenv:Header>
@@ -1725,8 +1725,8 @@
       </urn1:Update>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="SetUp EI"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SetUp engagements in EI" searchProperties="true"><con:settings/><con:testStep type="request" name="Update - 188803099368 Agda Andersson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UpdateResponderBinding</con:interface><con:operation>Update</con:operation><con:request name="Update - 188803099368 Agda Andersson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-sender-id" value="client"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-instance-id" value="VP_INSTANCE_1"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#ei-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:engagementindex:UpdateResponder:1" xmlns:urn2="urn:riv:itintegration:engagementindex:1">
    <soapenv:Header>
@@ -1853,7 +1853,7 @@
                <urn2:logicalAddress>HSA-ID-2</urn2:logicalAddress>
                <urn2:businessObjectInstanceIdentifier>NA</urn2:businessObjectInstanceIdentifier>
                <urn2:clinicalProcessInterestId>NA</urn2:clinicalProcessInterestId>
-               <urn2:sourceSystem>LT-HSAPRODUCER2</urn2:sourceSystem>
+               <urn2:sourceSystem>HSA-ID-2</urn2:sourceSystem>
                <urn2:dataController>TEST-DATA-CONTROLLER</urn2:dataController>
                <urn2:mostRecentContent>20140617153000</urn2:mostRecentContent>
             </urn2:engagement>
@@ -1877,11 +1877,11 @@
             <urn2:engagement>
                <urn2:registeredResidentIdentification>198611062384</urn2:registeredResidentIdentification>
                <urn2:serviceDomain>riv:clinicalprocess:healthcond:description</urn2:serviceDomain>
-               <urn2:categorization>2</urn2:categorization>
-               <urn2:logicalAddress>LT-HSAPRODUCER6</urn2:logicalAddress>
+               <urn2:categorization>und-bdi-ure</urn2:categorization>
+               <urn2:logicalAddress>HSA-ID-4</urn2:logicalAddress>
                <urn2:businessObjectInstanceIdentifier>NA</urn2:businessObjectInstanceIdentifier>
                <urn2:clinicalProcessInterestId>NA</urn2:clinicalProcessInterestId>
-               <urn2:sourceSystem>LT-HSAPRODUCER6</urn2:sourceSystem>
+               <urn2:sourceSystem>HSA-ID-4</urn2:sourceSystem>
                <urn2:dataController>TEST-DATA-CONTROLLER</urn2:dataController>
                <urn2:mostRecentContent>20140617153000</urn2:mostRecentContent>
             </urn2:engagement>
@@ -1898,8 +1898,8 @@
             <urn2:deleteFlag>false</urn2:deleteFlag>
             <urn2:engagement>
                <urn2:registeredResidentIdentification>192011189228</urn2:registeredResidentIdentification>
-               <urn2:serviceDomain>riv:clinicalprocess:healthcond:description</urn2:serviceDomain>
-               <urn2:categorization>upp</urn2:categorization>
+               <urn2:serviceDomain>riv:clinicalprocess:healthcond:actoutcome</urn2:serviceDomain>
+               <urn2:categorization>und-bdi-ure</urn2:categorization>
                <urn2:logicalAddress>HSA-ID-1</urn2:logicalAddress>
                <urn2:businessObjectInstanceIdentifier>NA</urn2:businessObjectInstanceIdentifier>
                <urn2:clinicalProcessInterestId>NA</urn2:clinicalProcessInterestId>
@@ -1911,8 +1911,8 @@
       </urn1:Update>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Verify" searchProperties="true"><con:settings/><con:testStep type="request" name="GetImagingOutcome - 121212121212 - Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetImagingOutcomeResponderBinding</con:interface><con:operation>GetImagingOutcome</con:operation><con:request name="GetImagingOutcome - 121212121212 - Tolvan Tolvansson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn2="urn:riv:clinicalprocess:healthcond:actoutcome:3">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
@@ -1926,8 +1926,8 @@
       </urn1:GetImagingOutcome>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:imagingOutcome)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetImagingOutcome - 188803099368 - Agda Andersson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetImagingOutcomeResponderBinding</con:interface><con:operation>GetImagingOutcome</con:operation><con:request name="GetImagingOutcome - 188803099368 - Agda Andersson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-vp-sender-id" value="test"/>
   &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn2="urn:riv:clinicalprocess:healthcond:actoutcome:3">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
@@ -1971,8 +1971,8 @@
       </urn1:GetImagingOutcome>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:imagingOutcome)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetImagingOutcome - 194911172296 - Sven Sturesson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetImagingOutcomeResponderBinding</con:interface><con:operation>GetImagingOutcome</con:operation><con:request name="GetImagingOutcome - 194911172296 - Sven Sturesson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-vp-sender-id" value="test"/>
   &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn2="urn:riv:clinicalprocess:healthcond:actoutcome:3">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
@@ -1986,8 +1986,8 @@
       </urn1:GetImagingOutcome>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:imagingOutcome)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetImagingOutcome - 198611062384 - Ulla Alm"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetImagingOutcomeResponderBinding</con:interface><con:operation>GetImagingOutcome</con:operation><con:request name="GetImagingOutcome - 198611062384 - Ulla Alm" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn2="urn:riv:clinicalprocess:healthcond:actoutcome:3">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
@@ -2000,4 +2000,405 @@
          </urn1:patientId>
       </urn1:GetImagingOutcome>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:imagingOutcome)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>ei-env</con:name><con:value>https://test.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:value></con:property><con:property><con:name>agg-env</con:name><con:value>https://test.esb.ntjp.se:443/clinicalprocess/healthcond/actoutcome/GetImagingOutcome/1/rivtabp21</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:imagingOutcome)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService port="8088" path="/mockGetImagingOutcomeResponderBinding" host="serp.local" name="GetImagingOutcomeResponderBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="GetImagingOutcome" interface="GetImagingOutcomeResponderBinding" operation="GetImagingOutcome"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:actoutcome:3">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetImagingOutcomeResponse>
+         <!--Zero or more repetitions:-->
+         <urn:imagingOutcome>
+            <urn1:imagingOutcomeHeader>
+               <urn1:documentId>?</urn1:documentId>
+               <urn1:sourceSystemHSAId>?</urn1:sourceSystemHSAId>
+               <!--Optional:-->
+               <urn1:documentTitle>?</urn1:documentTitle>
+               <!--Optional:-->
+               <urn1:documentTime>?</urn1:documentTime>
+               <urn1:patientId>
+                  <urn1:id>?</urn1:id>
+                  <urn1:type>?</urn1:type>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:patientId>
+               <urn1:accountableHealthcareProfessional>
+                  <urn1:authorTime>?</urn1:authorTime>
+                  <!--Optional:-->
+                  <urn1:healthcareProfessionalHSAId>?</urn1:healthcareProfessionalHSAId>
+                  <!--Optional:-->
+                  <urn1:healthcareProfessionalName>?</urn1:healthcareProfessionalName>
+                  <!--Optional:-->
+                  <urn1:healthcareProfessionalRoleCode>
+                     <!--Optional:-->
+                     <urn1:code>?</urn1:code>
+                     <!--Optional:-->
+                     <urn1:codeSystem>?</urn1:codeSystem>
+                     <!--Optional:-->
+                     <urn1:codeSystemName>?</urn1:codeSystemName>
+                     <!--Optional:-->
+                     <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                     <!--Optional:-->
+                     <urn1:displayName>?</urn1:displayName>
+                     <!--Optional:-->
+                     <urn1:originalText>?</urn1:originalText>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:healthcareProfessionalRoleCode>
+                  <!--Optional:-->
+                  <urn1:healthcareProfessionalOrgUnit>
+                     <!--Optional:-->
+                     <urn1:orgUnitHSAId>?</urn1:orgUnitHSAId>
+                     <!--Optional:-->
+                     <urn1:orgUnitName>?</urn1:orgUnitName>
+                     <!--Optional:-->
+                     <urn1:orgUnitTelecom>?</urn1:orgUnitTelecom>
+                     <!--Optional:-->
+                     <urn1:orgUnitEmail>?</urn1:orgUnitEmail>
+                     <!--Optional:-->
+                     <urn1:orgUnitAddress>?</urn1:orgUnitAddress>
+                     <!--Optional:-->
+                     <urn1:orgUnitLocation>?</urn1:orgUnitLocation>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:healthcareProfessionalOrgUnit>
+                  <!--Optional:-->
+                  <urn1:healthcareProfessionalCareUnitHSAId>?</urn1:healthcareProfessionalCareUnitHSAId>
+                  <!--Optional:-->
+                  <urn1:healthcareProfessionalCareGiverHSAId>?</urn1:healthcareProfessionalCareGiverHSAId>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:accountableHealthcareProfessional>
+               <!--Optional:-->
+               <urn1:legalAuthenticator>
+                  <urn1:signatureTime>?</urn1:signatureTime>
+                  <!--Optional:-->
+                  <urn1:legalAuthenticatorHSAId>?</urn1:legalAuthenticatorHSAId>
+                  <!--Optional:-->
+                  <urn1:legalAuthenticatorName>?</urn1:legalAuthenticatorName>
+                  <!--Optional:-->
+                  <urn1:legalAuthenticatorRoleCode>
+                     <!--Optional:-->
+                     <urn1:code>?</urn1:code>
+                     <!--Optional:-->
+                     <urn1:codeSystem>?</urn1:codeSystem>
+                     <!--Optional:-->
+                     <urn1:codeSystemName>?</urn1:codeSystemName>
+                     <!--Optional:-->
+                     <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                     <!--Optional:-->
+                     <urn1:displayName>?</urn1:displayName>
+                     <!--Optional:-->
+                     <urn1:originalText>?</urn1:originalText>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:legalAuthenticatorRoleCode>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:legalAuthenticator>
+               <urn1:approvedForPatient>?</urn1:approvedForPatient>
+               <!--Optional:-->
+               <urn1:careContactId>?</urn1:careContactId>
+               <!--Optional:-->
+               <urn1:nullified>?</urn1:nullified>
+               <!--Optional:-->
+               <urn1:nullifiedReason>?</urn1:nullifiedReason>
+            </urn1:imagingOutcomeHeader>
+            <urn1:imagingOutcomeBody>
+               <!--Optional:-->
+               <urn1:examinationSpeciality>
+                  <!--Optional:-->
+                  <urn1:code>?</urn1:code>
+                  <!--Optional:-->
+                  <urn1:codeSystem>?</urn1:codeSystem>
+                  <!--Optional:-->
+                  <urn1:codeSystemName>?</urn1:codeSystemName>
+                  <!--Optional:-->
+                  <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                  <!--Optional:-->
+                  <urn1:displayName>?</urn1:displayName>
+                  <!--Optional:-->
+                  <urn1:originalText>?</urn1:originalText>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:examinationSpeciality>
+               <urn1:typeOfResult>?</urn1:typeOfResult>
+               <urn1:resultTime>?</urn1:resultTime>
+               <urn1:resultReport>?</urn1:resultReport>
+               <!--Optional:-->
+               <urn1:resultComment>?</urn1:resultComment>
+               <!--Zero or more repetitions:-->
+               <urn1:radiationDose>
+                  <urn1:value>?</urn1:value>
+                  <urn1:unit>?</urn1:unit>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:radiationDose>
+               <!--Optional:-->
+               <urn1:patientData>
+                  <!--Optional:-->
+                  <urn1:patientWeight>
+                     <urn1:value>?</urn1:value>
+                     <urn1:unit>?</urn1:unit>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:patientWeight>
+                  <!--Optional:-->
+                  <urn1:patientLength>
+                     <urn1:value>?</urn1:value>
+                     <urn1:unit>?</urn1:unit>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:patientLength>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:patientData>
+               <!--Zero or more repetitions:-->
+               <urn1:imageRecording>
+                  <urn1:recordingId>
+                     <urn1:root>?</urn1:root>
+                     <!--Optional:-->
+                     <urn1:extension>?</urn1:extension>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:recordingId>
+                  <urn1:examinationActivity>
+                     <!--Optional:-->
+                     <urn1:code>?</urn1:code>
+                     <!--Optional:-->
+                     <urn1:codeSystem>?</urn1:codeSystem>
+                     <!--Optional:-->
+                     <urn1:codeSystemName>?</urn1:codeSystemName>
+                     <!--Optional:-->
+                     <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                     <!--Optional:-->
+                     <urn1:displayName>?</urn1:displayName>
+                     <!--Optional:-->
+                     <urn1:originalText>?</urn1:originalText>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:examinationActivity>
+                  <urn1:examinationTimePeriod>
+                     <!--Optional:-->
+                     <urn1:start>?</urn1:start>
+                     <!--Optional:-->
+                     <urn1:end>?</urn1:end>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:examinationTimePeriod>
+                  <!--Optional:-->
+                  <urn1:examinationStatus>?</urn1:examinationStatus>
+                  <!--Optional:-->
+                  <urn1:examinationUnit>?</urn1:examinationUnit>
+                  <!--Optional:-->
+                  <urn1:accountableHealthcareProfessional>
+                     <urn1:authorTime>?</urn1:authorTime>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalHSAId>?</urn1:healthcareProfessionalHSAId>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalName>?</urn1:healthcareProfessionalName>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalRoleCode>
+                        <!--Optional:-->
+                        <urn1:code>?</urn1:code>
+                        <!--Optional:-->
+                        <urn1:codeSystem>?</urn1:codeSystem>
+                        <!--Optional:-->
+                        <urn1:codeSystemName>?</urn1:codeSystemName>
+                        <!--Optional:-->
+                        <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                        <!--Optional:-->
+                        <urn1:displayName>?</urn1:displayName>
+                        <!--Optional:-->
+                        <urn1:originalText>?</urn1:originalText>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:healthcareProfessionalRoleCode>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalOrgUnit>
+                        <!--Optional:-->
+                        <urn1:orgUnitHSAId>?</urn1:orgUnitHSAId>
+                        <!--Optional:-->
+                        <urn1:orgUnitName>?</urn1:orgUnitName>
+                        <!--Optional:-->
+                        <urn1:orgUnitTelecom>?</urn1:orgUnitTelecom>
+                        <!--Optional:-->
+                        <urn1:orgUnitEmail>?</urn1:orgUnitEmail>
+                        <!--Optional:-->
+                        <urn1:orgUnitAddress>?</urn1:orgUnitAddress>
+                        <!--Optional:-->
+                        <urn1:orgUnitLocation>?</urn1:orgUnitLocation>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:healthcareProfessionalOrgUnit>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalCareUnitHSAId>?</urn1:healthcareProfessionalCareUnitHSAId>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalCareGiverHSAId>?</urn1:healthcareProfessionalCareGiverHSAId>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:accountableHealthcareProfessional>
+                  <!--Optional:-->
+                  <urn1:numberOfImages>?</urn1:numberOfImages>
+                  <!--Optional:-->
+                  <urn1:modalityData>
+                     <!--Optional:-->
+                     <urn1:typeOfModality>?</urn1:typeOfModality>
+                     <!--Optional:-->
+                     <urn1:manufacturer>?</urn1:manufacturer>
+                     <!--Optional:-->
+                     <urn1:modelName>?</urn1:modelName>
+                     <!--Optional:-->
+                     <urn1:equipmentId>?</urn1:equipmentId>
+                     <!--Optional:-->
+                     <urn1:softwareVersion>?</urn1:softwareVersion>
+                     <!--Optional:-->
+                     <urn1:lineFilter>
+                        <urn1:value>?</urn1:value>
+                        <urn1:unit>?</urn1:unit>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:lineFilter>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:modalityData>
+                  <!--Zero or more repetitions:-->
+                  <urn1:imageDicomData>
+                     <urn1:dicomSOP>?</urn1:dicomSOP>
+                     <!--Optional:-->
+                     <urn1:dicomValue>cid:1178875856356</urn1:dicomValue>
+                     <!--Optional:-->
+                     <urn1:dicomReference>?</urn1:dicomReference>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:imageDicomData>
+                  <!--Zero or more repetitions:-->
+                  <urn1:imageStructuredData>
+                     <!--Optional:-->
+                     <urn1:aperture>
+                        <urn1:value>?</urn1:value>
+                        <urn1:unit>?</urn1:unit>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:aperture>
+                     <!--Optional:-->
+                     <urn1:exposureTime>
+                        <urn1:value>?</urn1:value>
+                        <urn1:unit>?</urn1:unit>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:exposureTime>
+                     <!--Optional:-->
+                     <urn1:imageCreationTime>?</urn1:imageCreationTime>
+                     <!--Optional:-->
+                     <urn1:bodyPartExamined>
+                        <!--Optional:-->
+                        <urn1:code>?</urn1:code>
+                        <!--Optional:-->
+                        <urn1:codeSystem>?</urn1:codeSystem>
+                        <!--Optional:-->
+                        <urn1:codeSystemName>?</urn1:codeSystemName>
+                        <!--Optional:-->
+                        <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                        <!--Optional:-->
+                        <urn1:displayName>?</urn1:displayName>
+                        <!--Optional:-->
+                        <urn1:originalText>?</urn1:originalText>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:bodyPartExamined>
+                     <!--Optional:-->
+                     <urn1:contrastAgentUsed>?</urn1:contrastAgentUsed>
+                     <!--Optional:-->
+                     <urn1:magneticFieldStrength>
+                        <urn1:value>?</urn1:value>
+                        <urn1:unit>?</urn1:unit>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:magneticFieldStrength>
+                     <!--Optional:-->
+                     <urn1:copyright>?</urn1:copyright>
+                     <urn1:imageData>
+                        <urn1:mediaType>?</urn1:mediaType>
+                        <!--Optional:-->
+                        <urn1:value>cid:324855444421</urn1:value>
+                        <!--Optional:-->
+                        <urn1:reference>?</urn1:reference>
+                        <!--Optional:-->
+                        <urn1:burnedInaAnnotations>?</urn1:burnedInaAnnotations>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:imageData>
+                  </urn1:imageStructuredData>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:imageRecording>
+               <!--Optional:-->
+               <urn1:referral>
+                  <urn1:referralId>?</urn1:referralId>
+                  <!--Optional:-->
+                  <urn1:referralReason>?</urn1:referralReason>
+                  <!--Optional:-->
+                  <urn1:anamnesis>?</urn1:anamnesis>
+                  <!--Optional:-->
+                  <urn1:careContactId>?</urn1:careContactId>
+                  <urn1:accountableHealthcareProfessional>
+                     <urn1:authorTime>?</urn1:authorTime>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalHSAId>?</urn1:healthcareProfessionalHSAId>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalName>?</urn1:healthcareProfessionalName>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalRoleCode>
+                        <!--Optional:-->
+                        <urn1:code>?</urn1:code>
+                        <!--Optional:-->
+                        <urn1:codeSystem>?</urn1:codeSystem>
+                        <!--Optional:-->
+                        <urn1:codeSystemName>?</urn1:codeSystemName>
+                        <!--Optional:-->
+                        <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                        <!--Optional:-->
+                        <urn1:displayName>?</urn1:displayName>
+                        <!--Optional:-->
+                        <urn1:originalText>?</urn1:originalText>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:healthcareProfessionalRoleCode>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalOrgUnit>
+                        <!--Optional:-->
+                        <urn1:orgUnitHSAId>?</urn1:orgUnitHSAId>
+                        <!--Optional:-->
+                        <urn1:orgUnitName>?</urn1:orgUnitName>
+                        <!--Optional:-->
+                        <urn1:orgUnitTelecom>?</urn1:orgUnitTelecom>
+                        <!--Optional:-->
+                        <urn1:orgUnitEmail>?</urn1:orgUnitEmail>
+                        <!--Optional:-->
+                        <urn1:orgUnitAddress>?</urn1:orgUnitAddress>
+                        <!--Optional:-->
+                        <urn1:orgUnitLocation>?</urn1:orgUnitLocation>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:healthcareProfessionalOrgUnit>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalCareUnitHSAId>?</urn1:healthcareProfessionalCareUnitHSAId>
+                     <!--Optional:-->
+                     <urn1:healthcareProfessionalCareGiverHSAId>?</urn1:healthcareProfessionalCareGiverHSAId>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:accountableHealthcareProfessional>
+                  <!--Optional:-->
+                  <urn1:attested>
+                     <urn1:signatureTime>?</urn1:signatureTime>
+                     <!--Optional:-->
+                     <urn1:legalAuthenticatorHSAId>?</urn1:legalAuthenticatorHSAId>
+                     <!--Optional:-->
+                     <urn1:legalAuthenticatorName>?</urn1:legalAuthenticatorName>
+                     <!--Optional:-->
+                     <urn1:legalAuthenticatorRoleCode>
+                        <!--Optional:-->
+                        <urn1:code>?</urn1:code>
+                        <!--Optional:-->
+                        <urn1:codeSystem>?</urn1:codeSystem>
+                        <!--Optional:-->
+                        <urn1:codeSystemName>?</urn1:codeSystemName>
+                        <!--Optional:-->
+                        <urn1:codeSystemVersion>?</urn1:codeSystemVersion>
+                        <!--Optional:-->
+                        <urn1:displayName>?</urn1:displayName>
+                        <!--Optional:-->
+                        <urn1:originalText>?</urn1:originalText>
+                        <!--You may enter ANY elements at this point-->
+                     </urn1:legalAuthenticatorRoleCode>
+                     <!--You may enter ANY elements at this point-->
+                  </urn1:attested>
+                  <!--You may enter ANY elements at this point-->
+               </urn1:referral>
+               <!--You may enter ANY elements at this point-->
+            </urn1:imagingOutcomeBody>
+            <!--You may enter ANY elements at this point-->
+         </urn:imagingOutcome>
+         <urn:result>
+            <urn1:resultCode>?</urn1:resultCode>
+            <!--Optional:-->
+            <urn1:errorCode>?</urn1:errorCode>
+            <urn1:logId>?</urn1:logId>
+            <!--Optional:-->
+            <urn1:subCode>?</urn1:subCode>
+            <!--Optional:-->
+            <urn1:message>?</urn1:message>
+         </urn:result>
+         <!--You may enter ANY elements at this point-->
+      </urn:GetImagingOutcomeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcomeResponder:1:GetImagingOutcome"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties><con:property><con:name>ei-env</con:name><con:value>https://qa.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:value></con:property><con:property><con:name>agg-env</con:name><con:value>https://qa.esb.ntjp.se:443/vp/clinicalprocess/healthcond/actoutcome/GetImagingOutcome/1/rivtabp21</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
