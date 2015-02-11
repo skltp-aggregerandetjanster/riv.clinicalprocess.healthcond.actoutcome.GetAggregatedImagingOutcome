@@ -1,55 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!
-[soi-toolkit.gen.version=0.6.2-SNAPSHOT]
-[soi-toolkit.gen.type=services]
-[soi-toolkit.gen.createDate=2014-10-21T09:12:05.819+02:00]
-[soi-toolkit.gen.artifactId=GetAggregatedImagingOutcome]
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT 
+  YOU ARE DOING! [soi-toolkit.gen.version=0.6.2-SNAPSHOT] [soi-toolkit.gen.type=services] 
+  [soi-toolkit.gen.createDate=2014-10-21T09:12:05.819+02:00] [soi-toolkit.gen.artifactId=GetAggregatedImagingOutcome] -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.soitoolkit.commons.poms</groupId>
-        <artifactId>soitoolkit-default-parent</artifactId>
-        <version>0.6.1</version>
-    </parent>
+  <parent>
+    <groupId>org.soitoolkit.commons.poms</groupId>
+    <artifactId>soitoolkit-default-parent</artifactId>
+    <version>0.6.1</version>
+  </parent>
 
-    <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
-    <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>GetAggregatedImagingOutcome-parent</name>
+  <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
+  <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>GetAggregatedImagingOutcome-parent</name>
 
-    <scm>
-        <connection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</connection>
-        <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</developerConnection>
-        <url>https://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</url>
-      <tag>HEAD</tag>
+  <scm>
+    <connection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</connection>
+    <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</developerConnection>
+    <url>https://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</url>
+    <tag>HEAD</tag>
   </scm>
 
-    <modules>
-      <module>GetAggregatedImagingOutcome</module>
-      <module>GetAggregatedImagingOutcome-teststub</module>
-      <module>GetAggregatedImagingOutcome-schemas</module>
-    </modules>
+  <modules>
+    <module>GetAggregatedImagingOutcome</module>
+    <module>GetAggregatedImagingOutcome-teststub</module>
+    <module>GetAggregatedImagingOutcome-schemas</module>
+  </modules>
 
-		<build>
-			<pluginManagement>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-release-plugin</artifactId>
-						<version>2.5.1</version>
-						<configuration>
-							<autoVersionSubmodules>true</autoVersionSubmodules>
-							<tagNameFormat>v@{project.version}</tagNameFormat>
-							<pushChanges>false</pushChanges>
-							<localCheckout>true</localCheckout>
-						</configuration>
-					</plugin>
-				</plugins>
-			</pluginManagement>
-		</build>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.1</version>
+          <configuration>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <tagNameFormat>v@{project.version}</tagNameFormat>
+            <pushChanges>false</pushChanges>
+            <localCheckout>true</localCheckout>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
