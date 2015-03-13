@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT 
-  YOU ARE DOING! [soi-toolkit.gen.version=0.6.2-SNAPSHOT] [soi-toolkit.gen.type=schemas] 
+<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT
+  YOU ARE DOING! [soi-toolkit.gen.version=0.6.2-SNAPSHOT] [soi-toolkit.gen.type=schemas]
   [soi-toolkit.gen.createDate=2014-10-21T08:49:37.615+02:00] [soi-toolkit.gen.artifactId=GetAggregatedImagingOutcome] -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -9,11 +9,10 @@
   <parent>
     <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
     <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.2</version>
   </parent>
 
   <artifactId>GetAggregatedImagingOutcome-schemas</artifactId>
-  <version>1.0.1</version>
   <packaging>jar</packaging>
   <name>GetAggregatedImagingOutcome-schemas</name>
 
@@ -76,7 +75,7 @@
       </plugin>
 
       <plugin>
-        <!-- Create a zip-file only containing wsdl & xsd files, 
+        <!-- Create a zip-file only containing wsdl & xsd files,
              i.e. no JAX-WS/JAXB-generated artifacts, for example for a Microsoft .Net C# app -->
         <artifactId>maven-assembly-plugin</artifactId>
         <dependencies>
