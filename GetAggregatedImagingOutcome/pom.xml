@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT 
-  YOU ARE DOING! [soi-toolkit.gen.version=0.6.2-SNAPSHOT] [soi-toolkit.gen.type=services] 
+<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT
+  YOU ARE DOING! [soi-toolkit.gen.version=0.6.2-SNAPSHOT] [soi-toolkit.gen.type=services]
   [soi-toolkit.gen.createDate=2014-10-21T09:12:06.172+02:00] [soi-toolkit.gen.artifactId=GetAggregatedImagingOutcome] -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -17,7 +17,7 @@
   <name>GetAggregatedImagingOutcome</name>
 
   <properties>
-    <skltp.agp.version>1.2.1</skltp.agp.version>
+    <skltp.agp.version>1.2.3</skltp.agp.version>
   </properties>
 
   <dependencies>
@@ -111,9 +111,9 @@
         <artifactId>maven-mule-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-        
+
           <inclusions>
-          <!-- Include mule-dependencies that don't come with Mule 3.x otherwise 
+          <!-- Include mule-dependencies that don't come with Mule 3.x otherwise
                we can't install to a vanilla Mule 3.x installation -->
             <inclusion>
               <groupId>org.mule.modules</groupId>
@@ -124,7 +124,7 @@
               <artifactId>devkit</artifactId>
             </inclusion>
           </inclusions>
-          
+
           <exclusions>
             <!-- xercesImpl is endorsed in MULE_HOME/lib/endorsed, see issue 274 -->
             <exclusion>
@@ -179,7 +179,7 @@
               <artifactId>netty</artifactId>
             </exclusion>
 
-            <!-- jtds (JDBC driver fpr Microsoft SQL Server) needs to be 
+            <!-- jtds (JDBC driver fpr Microsoft SQL Server) needs to be
               added manually to MULE_HOME/lib/user if required, see issue 283 -->
             <exclusion>
               <groupId>net.sourceforge.jtds</groupId>
@@ -193,8 +193,8 @@
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
-          <!-- if no classifier is declared, then a mvn install results in 
-               a file in the local repo: ic2-1.0.0-SNAPSHOT.mule which is a jar-file - only 
+          <!-- if no classifier is declared, then a mvn install results in
+               a file in the local repo: ic2-1.0.0-SNAPSHOT.mule which is a jar-file - only
                strangely named and with a bad extension -->
           <classifier>core</classifier>
           <excludes>
@@ -209,7 +209,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
@@ -242,10 +242,10 @@
   <profiles>
     <profile>
       <id>muleServer</id>
-      <!-- Start mule server with the command 
-           "mvn -PmuleServer" or 
-           "mvn -PmuleServer -Dexec.args="${artifaceId}-config.xml"" 
-           if you want to override 
+      <!-- Start mule server with the command
+           "mvn -PmuleServer" or
+           "mvn -PmuleServer -Dexec.args="${artifaceId}-config.xml""
+           if you want to override
         the default config-file -->
       <build>
         <defaultGoal>test</defaultGoal>
