@@ -61,26 +61,6 @@ public class RequestListFactoryTest {
 	}
 		
 	@Test
-	public void isPartOf(){
-		List<String> careUnitIdList = Arrays.asList("UNIT1","UNIT2");
-		assertTrue(new RequestListFactoryImpl().isPartOf(careUnitIdList, "UNIT2"));
-		assertTrue(new RequestListFactoryImpl().isPartOf(careUnitIdList, "UNIT1"));
-		
-		careUnitIdList = new ArrayList<String>();
-		assertTrue(new RequestListFactoryImpl().isPartOf(careUnitIdList, "UNIT1"));
-		
-		careUnitIdList = null;
-		assertTrue(new RequestListFactoryImpl().isPartOf(careUnitIdList, "UNIT1"));
-	}
-	
-	@Test
-	public void isNotPartOf(){
-		List<String> careUnitIdList = Arrays.asList("UNIT1","UNIT2");
-		assertFalse(new RequestListFactoryImpl().isPartOf(careUnitIdList, "UNIT3"));
-		assertFalse(new RequestListFactoryImpl().isPartOf(careUnitIdList, null));
-	}
-	
-	@Test
 	public void testIsPartOf() {
 		assertTrue(new RequestListFactoryImpl().isPartOf("TEST", "TEST"));
 		assertFalse(new RequestListFactoryImpl().isPartOf("TEST_1", "TEST_2"));

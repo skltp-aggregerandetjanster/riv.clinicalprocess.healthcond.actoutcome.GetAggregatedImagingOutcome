@@ -6,8 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soitoolkit.commons.mule.jaxb.JaxbUtil;
 
+import riv.clinicalprocess.healthcond.actoutcome.enums.v3.ResultCodeEnum;
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.GetImagingOutcomeResponseType;
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.ObjectFactory;
+import riv.clinicalprocess.healthcond.actoutcome.v3.ResultType;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusType;
 import se.skltp.agp.service.api.QueryObject;
 import se.skltp.agp.service.api.ResponseListFactory;
@@ -26,11 +28,13 @@ public class ResponseListFactoryImpl implements ResponseListFactory {
 	    	final GetImagingOutcomeResponseType response = (GetImagingOutcomeResponseType)object;
 	    	aggregatedResponse.getImagingOutcome().addAll(response.getImagingOutcome());
 		}
-
-	    if (log.isInfoEnabled()) {
-    		String subjectOfCareId = queryObject.getFindContent().getRegisteredResidentIdentification();
-        	log.info("Returning {} aggregated remisstatus for subject of care id {}", aggregatedResponse.getImagingOutcome().size() ,subjectOfCareId);
-        }
+	    
+	    aggregatedResponse.setResult(new ResultType());
+	    aggregatedResponse.getResult().setLogId("NA");
+	    aggregatedResponse.getResult().setResultCode(ResultCodeEnum.INFO);
+	    
+		String subjectOfCareId = queryObject.getFindContent().getRegisteredResidentIdentification();
+    	log.info("Returning {} aggregated remisstatus for subject of care id {}", aggregatedResponse.getImagingOutcome().size() ,subjectOfCareId);
 
         // Since the class GetImagingOutcomeResponseType don't have an @XmlRootElement annotation
         // we need to use the ObjectFactory to add it.
