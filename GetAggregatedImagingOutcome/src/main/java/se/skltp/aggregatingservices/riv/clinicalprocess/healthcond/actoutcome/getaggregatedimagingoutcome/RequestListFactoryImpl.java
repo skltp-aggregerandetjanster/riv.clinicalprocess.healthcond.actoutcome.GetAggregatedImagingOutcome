@@ -23,7 +23,7 @@ public class RequestListFactoryImpl implements RequestListFactory {
 
     private static final Logger log = LoggerFactory.getLogger(RequestListFactoryImpl.class);
     private static final ThreadSafeSimpleDateFormat requestDateFormat = new ThreadSafeSimpleDateFormat("yyyyMMdd");
-    private static final ThreadSafeSimpleDateFormat mostRecentContentDateFormat = new ThreadSafeSimpleDateFormat("yyyyMMddhhmmss");
+    private static final ThreadSafeSimpleDateFormat mostRecentContentDateFormat = new ThreadSafeSimpleDateFormat("yyyyMMddHHmmss");
 
     /**
      * Filtrera svarsposter från engagemangsindexet baserat parametrar i GetImagingOutcome requestet. 
