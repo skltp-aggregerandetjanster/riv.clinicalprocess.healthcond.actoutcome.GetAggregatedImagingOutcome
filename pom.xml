@@ -14,7 +14,7 @@
 
   <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
   <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
-  <version>1.0.3-RC3-SNAPSHOT</version>
+  <version>1.0.3-RC3</version>
   <packaging>pom</packaging>
   <name>GetAggregatedImagingOutcome-parent</name>
 
@@ -22,7 +22,7 @@
     <connection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</connection>
     <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</developerConnection>
     <url>https://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.actoutcome.GetAggregatedImagingOutcome.git</url>
-    <tag>HEAD</tag>
+    <tag>v1.0.3-RC3</tag>
   </scm>
 
   <modules>
