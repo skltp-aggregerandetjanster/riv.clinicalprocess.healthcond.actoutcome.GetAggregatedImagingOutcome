@@ -1,8 +1,6 @@
 package se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome.getaggregatedimagingoutcome;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +9,6 @@ import java.util.Map.Entry;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soitoolkit.commons.mule.util.ThreadSafeSimpleDateFormat;
 
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.GetImagingOutcomeType;
 import se.skltp.agp.riv.itintegration.engagementindex.findcontentresponder.v1.FindContentResponseType;
@@ -22,8 +19,6 @@ import se.skltp.agp.service.api.RequestListFactory;
 public class RequestListFactoryImpl implements RequestListFactory {
 
     private static final Logger log = LoggerFactory.getLogger(RequestListFactoryImpl.class);
-    private static final ThreadSafeSimpleDateFormat requestDateFormat = new ThreadSafeSimpleDateFormat("yyyyMMdd");
-    private static final ThreadSafeSimpleDateFormat mostRecentContentDateFormat = new ThreadSafeSimpleDateFormat("yyyyMMddHHmmss");
 
     /**
      * Filtrera svarsposter från engagemangsindexet baserat parametrar i GetImagingOutcome requestet. 
@@ -46,12 +41,6 @@ public class RequestListFactoryImpl implements RequestListFactory {
     public List<Object[]> createRequestList(QueryObject qo, FindContentResponseType src) {
         final GetImagingOutcomeType originalRequest = (GetImagingOutcomeType) qo.getExtraArg();
 
-        Date requestFromDate = parseRequestDatePeriod((originalRequest.getDatePeriod() == null || originalRequest.getDatePeriod().getStart() == null) ? null
-                : originalRequest.getDatePeriod().getStart());
-
-        Date requestToDate = parseRequestDatePeriod((originalRequest.getDatePeriod() == null || originalRequest.getDatePeriod().getEnd() == null) ? null
-                : originalRequest.getDatePeriod().getEnd());
-
         final String sourceSystemHsaId = originalRequest.getSourceSystemHSAId();
 
         FindContentResponseType eiResp = (FindContentResponseType) src;
@@ -62,12 +51,9 @@ public class RequestListFactoryImpl implements RequestListFactory {
         Map<String, List<String>> sourceSystem_pdlUnitList_map = new HashMap<String, List<String>>();
 
         for (EngagementType engagement : inEngagements) {
-            // Filter
-            if (mostRecentContentIsBetween(requestFromDate, requestToDate, engagement.getMostRecentContent())) {
-                if (isPartOf(sourceSystemHsaId, engagement.getLogicalAddress())) {
-                    log.debug("Add source system: {} for producer: {}", engagement.getSourceSystem(), engagement.getLogicalAddress());
-                    addPdlUnitToSourceSystem(sourceSystem_pdlUnitList_map, engagement.getSourceSystem(), engagement.getLogicalAddress());
-                }
+            if (isPartOf(sourceSystemHsaId, engagement.getLogicalAddress())) {
+                log.debug("Add source system: {} for producer: {}", engagement.getSourceSystem(), engagement.getLogicalAddress());
+                addPdlUnitToSourceSystem(sourceSystem_pdlUnitList_map, engagement.getSourceSystem(), engagement.getLogicalAddress());
             }
         }
 
@@ -92,42 +78,6 @@ public class RequestListFactoryImpl implements RequestListFactory {
         log.debug("Transformed payload: {}", reqList);
 
         return reqList;
-    }
-
-    private Date parseRequestDatePeriod(String ts) {
-        try {
-            if (ts == null || ts.length() == 0) {
-                return null;
-            } else {
-                return requestDateFormat.parse(ts);
-            }
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private boolean mostRecentContentIsBetween(Date fromRequestDate, Date toRequestDate, String mostRecentContentTimestamp) {
-        if (mostRecentContentTimestamp == null) {
-            log.error("mostRecentContent - timestamp string is null");
-            return true;
-        }
-        if (StringUtils.isBlank(mostRecentContentTimestamp)) {
-            log.error("mostRecentContent - timestamp string is blank");
-            return true;
-        }
-        log.debug("Is {} between {} and ", new Object[] { mostRecentContentTimestamp, fromRequestDate, toRequestDate });
-        try {
-            Date mostRecentContent = mostRecentContentDateFormat.parse(mostRecentContentTimestamp);
-            if (fromRequestDate != null && fromRequestDate.after(mostRecentContent)) {
-                return false;
-            }
-            if (toRequestDate != null && toRequestDate.before(mostRecentContent)) {
-                return false;
-            }
-            return true;
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     boolean isPartOf(final String careUnitId, final String careUnit) {
