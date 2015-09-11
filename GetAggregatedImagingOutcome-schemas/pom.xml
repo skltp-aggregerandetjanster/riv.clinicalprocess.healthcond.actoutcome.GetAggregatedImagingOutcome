@@ -9,7 +9,7 @@
   <parent>
     <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
     <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
-    <version>1.0.3-RC4-SNAPSHOT</version>
+    <version>1.0.3-RC4</version>
   </parent>
 
   <artifactId>GetAggregatedImagingOutcome-schemas</artifactId>
