@@ -16,6 +16,10 @@
   <packaging>mule</packaging>
   <name>GetAggregatedImagingOutcome-teststub</name>
 
+  <properties>
+    <skltp.agp.version>1.3.5</skltp.agp.version>
+  </properties>
+
   <dependencies>
     <!-- dependencies to the integration component that contains the services to stub -->
     <dependency>
@@ -34,12 +38,12 @@
     <dependency>
       <groupId>se.skltp.agp</groupId>
       <artifactId>agp-core</artifactId>
-      <version>1.3.1</version>
+      <version>${skltp.agp.version}</version>
     </dependency>
     <dependency>
       <groupId>se.skltp.agp</groupId>
       <artifactId>agp-test-common</artifactId>
-      <version>1.3.1</version>
+      <version>${skltp.agp.version}</version>
     </dependency>
   </dependencies>
 
@@ -49,8 +53,7 @@
         <directory>${basedir}/src/main/resources</directory>
       </resource>
       <resource>
-        <!-- To get mule-config files from the Mule Studio defined resource-folder
-          in the classpath... -->
+        <!-- To get mule-config files from the Mule Studio defined resource-folder in the classpath... -->
         <directory>${basedir}/src/main/app</directory>
       </resource>
     </resources>
@@ -71,7 +74,7 @@
         <artifactId>maven-mule-plugin</artifactId>
         <extensions>true</extensions>
         <!-- Include mule-dependencies that don't come with Mule 3.x otherwise
-            we can't install to a vanilla Mule 3.x installation -->
+             we can't install to a vanilla Mule 3.x installation -->
         <configuration>
           <inclusions>
             <inclusion>
@@ -158,8 +161,7 @@
       <!-- Start mule server with the command
            "mvn -PmuleServer" or
            "mvn -PmuleServer -Dexec.args="${artifaceId}-config.xml""
-           if you want to override
-        the default config-file -->
+           if you want to override the default config-file -->
       <build>
         <defaultGoal>test</defaultGoal>
         <plugins>
