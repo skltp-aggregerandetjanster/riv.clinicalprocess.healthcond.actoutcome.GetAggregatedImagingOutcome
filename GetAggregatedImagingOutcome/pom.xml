@@ -9,7 +9,7 @@
   <parent>
     <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome</groupId>
     <artifactId>GetAggregatedImagingOutcome-parent</artifactId>
-    <version>1.0.4-RC1-SNAPSHOT</version>
+    <version>1.1.0-RC1-SNAPSHOT</version>
   </parent>
 
   <artifactId>GetAggregatedImagingOutcome</artifactId>
@@ -39,7 +39,7 @@
 
     <dependency>
       <groupId>org.soitoolkit.commons.poms.mule-dependencies</groupId>
-      <artifactId>soitoolkit-mule-3.3.1-dependencies</artifactId>
+      <artifactId>soitoolkit-mule-3.7.0-dependencies</artifactId>
       <version>${soitoolkit.version}</version>
       <type>pom</type>
     </dependency>
@@ -187,7 +187,7 @@
                strangely named and with a bad extension -->
           <classifier>core</classifier>
           <excludes>
-            <exclude>log4j.xml</exclude>
+            <exclude>log4j2.xml</exclude>
           </excludes>
         </configuration>
         <executions>
@@ -209,14 +209,13 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <!--<outputDirectory>target/classes</outputDirectory> -->
+              <overwrite>true</overwrite>
               <outputDirectory>${project.build.outputDirectory}</outputDirectory>
               <resources>
                 <resource>
                   <directory>src/environment</directory>
                   <includes>
-                    <include>log4j.xml</include>
-                    <include>log4j.dtd</include>
+                    <include>log4j2.xml</include>
                   </includes>
                 </resource>
               </resources>
