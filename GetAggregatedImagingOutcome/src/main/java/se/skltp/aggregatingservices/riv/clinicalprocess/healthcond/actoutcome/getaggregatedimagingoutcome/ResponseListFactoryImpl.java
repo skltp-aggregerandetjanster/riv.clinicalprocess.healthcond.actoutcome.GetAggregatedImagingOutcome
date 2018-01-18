@@ -53,7 +53,7 @@ public class ResponseListFactoryImpl implements ResponseListFactory {
 	    aggregatedResponse.getResult().setResultCode(ResultCodeEnum.INFO);
 	    
 		String subjectOfCareId = queryObject.getFindContent().getRegisteredResidentIdentification();
-    	log.info("Returning {} aggregated alert informations for subject of care id {}", aggregatedResponse.getImagingOutcome().size() ,subjectOfCareId);
+    	log.info("Returning {} aggregated imaging outcome for subject of care id {}", aggregatedResponse.getImagingOutcome().size() ,subjectOfCareId);
 
         // Since the class GetImagingOutcomeResponseType don't have an @XmlRootElement annotation
         // we need to use the ObjectFactory to add it.
