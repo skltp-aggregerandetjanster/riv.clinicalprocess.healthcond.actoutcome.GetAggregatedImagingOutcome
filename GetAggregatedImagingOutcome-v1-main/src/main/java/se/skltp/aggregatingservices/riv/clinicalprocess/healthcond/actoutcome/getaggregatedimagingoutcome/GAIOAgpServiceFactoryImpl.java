@@ -19,7 +19,7 @@ public String getPatientId(GetImagingOutcomeType queryObject){
 
 @Override
 public String getSourceSystemHsaId(GetImagingOutcomeType queryObject){
-    return queryObject.getPatientId().getId();
+    return queryObject.getSourceSystemHSAId();
     }
 
 @Override
