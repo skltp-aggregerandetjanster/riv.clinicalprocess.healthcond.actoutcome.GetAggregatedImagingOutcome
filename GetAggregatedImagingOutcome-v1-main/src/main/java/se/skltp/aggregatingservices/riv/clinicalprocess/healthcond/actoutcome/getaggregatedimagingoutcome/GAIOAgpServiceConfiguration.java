@@ -20,7 +20,7 @@ public class GAIOAgpServiceConfiguration extends se.skltp.aggregatingservices.co
     setTargetNamespace("urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcome:1:rivtabp21");
 
     // Set inbound defaults
-    setInboundServiceURL("http://localhost:9012/GetAggregatedImagingOutcome/service/v1");
+    setInboundServiceURL("http://0.0.0.0:9012/GetAggregatedImagingOutcome/service/v1");
     setInboundServiceWsdl(SCHEMA_PATH);
     setInboundServiceClass(GetImagingOutcomeResponderInterface.class.getName());
     setInboundPortName(GetImagingOutcomeResponderService.GetImagingOutcomeResponderPort.toString());
