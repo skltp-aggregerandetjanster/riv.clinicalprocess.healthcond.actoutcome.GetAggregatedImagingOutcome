@@ -1,15 +1,15 @@
 package se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.actoutcome.getaggregatedimagingoutcome;
 
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
+import org.junit.jupiter.api.BeforeAll;
 import riv.clinicalprocess.healthcond.actoutcome.getimagingoutcomeresponder.v1.GetImagingOutcomeResponseType;
 import se.skltp.aggregatingservices.api.AgpServiceFactory;
 import se.skltp.aggregatingservices.tests.CreateFindContentTest;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@ExtendWith(SpringExtension.class)
 public class GAIOCreateFindContentTest extends CreateFindContentTest {
 
   private static GAIOAgpServiceConfiguration configuration = new GAIOAgpServiceConfiguration();
@@ -20,7 +20,7 @@ public class GAIOCreateFindContentTest extends CreateFindContentTest {
     super(testDataGenerator, agpServiceFactory, configuration);
   }
 
-  @BeforeClass
+  @BeforeAll
   public static void before() {
     configuration = new GAIOAgpServiceConfiguration();
     agpServiceFactory = new GAIOAgpServiceFactoryImpl();
